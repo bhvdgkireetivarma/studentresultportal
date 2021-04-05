@@ -1,0 +1,75 @@
+body{
+    font-family: helvetica;
+    position: relative;
+    background-color: #e8eae6;
+    margin: 0;
+}
+
+
+.main{
+    width:500px;
+    height:400px;
+    border: 1px solid black;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    font-size: 2em;
+}
+.head{
+    border-bottom:1px solid black ;
+}
+.head div{
+    margin: 10px;
+}
+.subject div{
+    margin:10px;
+}
+.submit{
+    text-align: center;
+    
+}
+button{
+    width:140px;
+    height:40px;
+    margin:10px;
+    font-size: 1em;
+}
+.image{
+    text-align: center;
+}
+.bground{
+    height: 500px;
+    width:700px;
+    position: absolute;
+    background-color: white;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 5px rgb(170, 167, 167);
+    
+}
+.headline{
+    text-align: center;
+    font-size: 2em;
+    background-color: white;
+    padding: 4px;
+}
+.names{
+    font-size: 1em;
+    font-weight: bold;
+}
+.nameslist{
+    margin: 10px;
+    padding: 5px;
+}
+.namess{
+    margin: 5px;
+}
+.pass{
+    
+    color: rgb(13, 219, 13);
+}
+.fail{
+    color: red;
+}

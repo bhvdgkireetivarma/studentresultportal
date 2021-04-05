@@ -1,0 +1,81 @@
+body{
+    position: relative;
+    background-image: url("imagenice1.jpg");
+    background-size: cover;
+    font-family: Helvetica;
+    
+}
+.main{
+    height: 530px;
+    width:800px;
+   
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+  background-color:rgba(255,255,255,0.6);
+ 
+}
+.head{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    border-bottom:1px solid grey;
+}
+.national{
+    flex:0 1 auto;
+    font-size: 1.3em;
+    position: absolute;
+    top:20%;
+    left: 50%;
+    transform: translate(-50%,-20%);
+}
+.clglogo{
+    margin:5px;
+}
+.name{
+    color: white;
+    font-size: 2em;
+    
+    left:50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+.details{
+    font-size: 1.5em;
+    margin: 20px;
+  
+  
+}
+.det{
+    padding: 0.5em;
+}
+span{
+    color:rgb(228, 97, 9);
+}
+.button{
+    
+    text-align: center;
+}
+button{
+    font-size: 15px;
+    height:30px;
+    width:140px;
+    border:none;
+    background-color: rgba(255,66,78,0.5);
+    border-radius: 10px;
+    color: white;
+}
+button:hover{
+    cursor: pointer;
+}
+.logout{
+   text-align: center;
+   padding-top: 1.7em;
+
+ 
+}
+.log{
+    text-decoration: none;
+    color: white;
+}

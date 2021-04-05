@@ -1,0 +1,59 @@
+body{
+    position: relative;
+    font-family: Helvetica;
+    background-image: url("download.jpg");
+    background-size: cover;
+}
+.main{
+    height: 480px;
+    width:400px;
+    background-color:rgba(255, 255, 255, 0.8);
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    font-size: 1em;
+}
+.head{
+    text-align: center;
+    color: brown;
+    font-size: 1.5em;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+.subject{
+    margin: 10px;
+    text-align: center;
+}
+.subject div{
+    margin:20px;
+    font-size: 1.5em;
+}
+input{
+    height:30px;
+    width:50px;
+    border:none;
+    background-color: rgba(243, 161, 78,0.5);
+}
+button{
+    font-size: 0.8em;
+    color: white;
+    width:100px;
+    height:30px;
+    background-color:rgba(243, 161, 78,1) ;
+    border: none;
+
+}
+span{
+    color:red;
+}
+.names{
+    font-size: 1.3em;
+    border-bottom: 1px solid black;
+    margin:5px;
+}
+.error{
+    text-align: center;
+    color:greenyellow;
+    font-size: 2em;
+}
