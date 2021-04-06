@@ -11,6 +11,7 @@ td {
   padding: 8px;
 }
 
+
 th {
   border: 1px solid #dddddd;
   text-align: left;
