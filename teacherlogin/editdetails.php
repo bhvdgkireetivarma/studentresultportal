@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="editdetails.css?version=51"/>
+<link rel="stylesheet" href="editdetails.css?version=1"/>
 <?php  
 $conn=new mysqli("localhost","root","","studentresult");
 if ($conn->connect_error) {
@@ -37,7 +37,7 @@ if(isset($_POST["sub"]))
         $result=$conn->query($sql);
         if($result&&$result1)
         {
-$error="succesful!";
+$error="Update succesful!";
         }
     }
 }
@@ -51,31 +51,59 @@ $error="succesful!";
 
 
 <body>
+<div class="head">
+Update Student Details
+</div>
 <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 <div class="main">
-<div class="head">
-Edit Details
-</div>
+
 <div class="names">
-<div>
+<div class="namess name">
     Name :<span><?php echo "$name"; ?></span>
 </div>
-<div>
+<div class="namess roll">
 Roll Number :<span><?php echo "$roll"; ?></span>
 </div>
 </div>
-<div class="subject">
-    <div>Name :<span> <?php echo "$name"; ?></span> <span><input type="varchar" name="nam"></input></span></div>
-    <div> Gender:<span> <?php echo "$gender"; ?></span> <span><input type="varchar" name="gen"></input></span></div>
-    <div>Birthdate :<span> <?php echo "$bday"; ?></span> <span><input type="date" name="bday"></input></span></div>
-    <div>Class :<span> <?php echo "$class"; ?></span> <span><input type="number" name="class"></input></span></div>
-    <div>Email :<span> <?php echo "$email"; ?></span> <span><input type="email" name="email"></input></span></div>
-    <div>Phone No :<span> <?php echo "$phone"; ?></span> <span><input type="varchar" name="phn"></input></span></div>
-    <div><button type="submit" name="sub">submit</button> </div>
+<table>
+    
+      <tr>
+             <td><div>Student Name</div></th>
+            <td><?php echo "$name"; ?></th>
+            <td><input type="varchar" name="nam" value="<?php echo "$name"; ?>"></th>
+      </tr>
+      <tr>
+             <td><div>Gender</div></th>
+            <td><?php echo "$gender" ?></th>
+            <td><input type="varchar" name="gen" value="<?php echo "$gender"; ?>"></th>
+      </tr>
+      <tr>
+             <td><div>BirthDate</div></th>
+            <td><?php echo "$bday" ?></th>
+            <td><input type="date" name="bday" value="<?php echo "$bday"; ?>"></th>
+      </tr>
+      <tr>
+             <td><div>Class</div></th>
+            <td><?php echo "$class" ?></th>
+            <td><input type="number" name="class" value="<?php echo "$class"; ?>"></th>
+      </tr>
+      <tr>
+             <td><div>Email</div></th>
+            <td><?php echo "$email" ?></th>
+            <td><input type="varchar" name="email" value="<?php echo "$email"; ?>"></th>
+      </tr>
+      <tr>
+      <td><div>Phone number</div></th>
+            <td><?php echo "$phone" ?></th>
+            <td><input type="varchar" name="phn" value="<?php echo "$phone"; ?>"></th>
+      </tr>
+</table>
+
+<div class="butt"><button class="buttons" type="submit" name="sub">Update</button> </div>
+
 </div>
 <div class="error">
     <?php echo "$error";?>
-</div>
 </div>
 </form>
 

@@ -1,25 +1,47 @@
 body{
     position: relative;
     font-family: Helvetica;
-    background-image: url("download.jpg");
-    background-size: cover;
+    margin:0;
+
 }
+table {
+    position: relative;
+    font-family: helvetica;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
 .main{
-    height: 520px;
+    height: 480px;
     width:700px;
     background-color:rgba(255, 255, 255, 0.8);
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
     position: absolute;
+    box-shadow: 5px 5px 5px grey;
     font-size: 1em;
+    border: 1px solid #dddddd;
 }
 .head{
     text-align: center;
-    color: brown;
+    color:white;
     font-size: 1.5em;
     padding: 10px;
-    border-bottom: 1px solid black;
+    background-color: #73c9e4;
+    
 }
 .subject{
     margin: 10px;
@@ -32,29 +54,46 @@ body{
 }
 input{
     height:30px;
-    width:220px;
-    border:none;
-    background-color: rgba(243, 161, 78,0.5);
+    width:200px;
+    border:1px solid grey;
+    background-color:rgb(255, 255, 255);
 }
 button{
     font-size: 0.8em;
     color: white;
     width:100px;
     height:30px;
-    background-color:rgba(243, 161, 78,1) ;
+    background-color: #73c9e4;
     border: none;
 
 }
+.namess{
+    margin:10px;
+}
 span{
-    color:red;
+    color:#d30c0c;
 }
 .names{
     font-size: 1.3em;
-    border-bottom: 1px solid black;
-    margin:5px;
+    
+    margin:20px;
 }
 .error{
     text-align: center;
-    color:greenyellow;
-    font-size: 2em;
+    color:black;
+    margin:15px;
+    font-size: 1.4em;
+}
+.butt{
+    text-align: center;
+    margin:20px;
+}
+table div{
+
+    font-weight: bold;
+}
+.buttons{
+    font-size: 1.3em;
+    width:200px;
+    margin:10px;
 }
