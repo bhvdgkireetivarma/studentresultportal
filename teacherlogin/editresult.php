@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="editresult.css"/>
+<link rel="stylesheet" href="editresult.css?version=1"/>
 <?php  
 $conn=new mysqli("localhost","root","","studentresult");
 if ($conn->connect_error) {
@@ -34,7 +34,7 @@ if(isset($_POST["sub"]))
         $result=$conn->query($sql);
         if($result)
         {
-$error="succesful!";
+$error="Updation Succesful!";
         }
     }
 }
@@ -49,30 +49,61 @@ $error="succesful!";
 
 <body>
 <form method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
-<div class="main">
 <div class="head">
-Edit Marks
+Update Student Marks
 </div>
+<div class="main">
+
 <div class="names">
-<div>
+<div class="namee name">
     Name :<span><?php echo "$name"; ?></span>
 </div>
-<div>
+<div class="namee roll">
 Roll Number :<span><?php echo "$roll"; ?></span>
 </div>
 </div>
-<div class="subject">
-    <div>Telugu :<span> <?php echo "$telugu"; ?></span> <span><input type="number" name="tel"></input></span></div>
-    <div>English :<span> <?php echo "$english"; ?></span> <span><input type="number" name="eng"></input></span></div>
-    <div>Hindi :<span> <?php echo "$hindi"; ?></span> <span><input type="number" name="hin"></input></span></div>
-    <div>Social :<span> <?php echo "$social"; ?></span> <span><input type="number" name="soc"></input></span></div>
-    <div>Science :<span> <?php echo "$science"; ?></span> <span><input type="number" name="sci"></input></span></div>
-    <div>Computer :<span> <?php echo "$cp"; ?></span> <span><input type="number" name="cp"></input></span></div>
-    <div><button type="submit" name="sub">submit</button> </div>
+<table class="table">
+<tr>
+<th>Subject</th>
+<th>Marks</th>
+<th>Update</th>
+</tr>
+<tr>
+<td>Telugu</td>
+<td><?php echo "$telugu"; ?></td>
+<td><input type="number" name="tel" value="<?php echo "$telugu"; ?>" min="0" max="100"></input></td>
+</tr>
+<tr>
+<td>English</td>
+<td><?php echo "$english"; ?></td>
+<td><input type="number" name="eng" value="<?php echo "$english"; ?>" min="0" max="100"></input></td>
+</tr>
+<tr>
+<td>Hindi</td>
+<td><?php echo "$hindi"; ?></td>
+<td><input type="number" name="hin" value="<?php echo "$hindi"; ?>" min="0" max="100"></input></td>
+</tr>
+<tr>
+<td>Social</td>
+<td><?php echo "$social"; ?></td>
+<td><input type="number" name="soc" value="<?php echo "$social"; ?>" min="0" max="100"></input></td>
+</tr>
+<tr>
+<td>Science</td>
+<td><?php echo "$science"; ?></td>
+<td><input type="number" name="sci" value="<?php echo "$science"; ?>" min="0" max="100"></input></td>
+</tr>
+<tr>
+<td>Computer</td>
+<td><?php echo "$cp"; ?></td>
+<td><input type="number" name="cp" value="<?php echo "$cp"; ?>" ></input></td>
+</tr>
+</table>
+<div class="buttonn"><button class="but" type ="submit" name="sub">Update</button></div>
+
 </div>
 <div class="error">
     <?php echo "$error";?>
-</div>
 </div>
 </form>
 

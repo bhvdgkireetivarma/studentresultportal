@@ -504,7 +504,7 @@ Get Whole Class List
 
 <div class="list two">
 <div class="listheading">
-Get Passed Student list
+Get Checked Student list
 </div>
 
 <div class="selectlist">
