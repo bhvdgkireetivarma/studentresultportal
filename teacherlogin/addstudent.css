@@ -1,68 +1,40 @@
 body{
-    display: flex;
-    position: relative;
-    background-image: url("download.jpg");
-    background-size: cover;
-}
-.main div{
-    padding: 1.1em;
-}
-.main{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform: translate(-50%,-50%);
-  height:600px;
-  width:730px;
-    font-size: 1em;
-    font-family:Helvetica;
-    background-color: rgba(255,255,255,0.9);
-}
-.reg{
-    font-size:1.3em;
-    color:brown;
-    text-align: center;
-    border-bottom: 1px solid black;
-}
-body div{
-    margin:1px;
-}
-button{
-    width:60px;
- height:30px;
- 
-    background-color: rgba(243, 161, 78,1);
-    border:none;
-    color: white;
-}
-input{
-    border:none;
-    background-color: rgba(243, 161, 78,0.5);
     
+   margin:10px;
+   padding: 10px;
 }
-.errorr span{
-    font-size:1.5em;
-    color:green;
-    text-align: center;
-}
-span{
-    color:red;
-    margin:0;
-    padding:0;
-}
-.regi{
-    margin:0;
-    padding:0;
+
+.reg{
+    font-size:2em;
+    color:brown;
     text-align: center;
    
 }
-button{
+.button1{
     width:100%;
+    text-align: left;
+    border: none;
+    padding: 8px;
+    background-color: #73c9e4;
+    color: white;
+    margin: 5px;
+   
 }
-.total{
-    display: flex;
-
+.regi{
+    text-align: center;
+    margin: 30px;
+  
 }
-.first{
-    border-right: 1px solid black;
+.regis{
+    width:300px;
+    height: 30px;
+    size:1.5em;
+    background-color:#73c9e4;
+    border:none;
+    color: white;
+}
+.errorr{
+    text-align: center;
+    color: green;
+    font-size: 1.3em;
 }
