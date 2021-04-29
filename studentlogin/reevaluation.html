@@ -1,0 +1,115 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>reevaluation</title>
+  <link rel="stylesheet" href="reevaluation.css?version=81">
+
+</head>
+
+<body>
+<div class="heading">
+    <h2>
+        Request Re-evaluation
+    </h2>
+</div>
+<div class="total">
+<div class="main one">
+    <table>
+        <tr>
+            <th>
+                Subject
+            </th>
+            <th>
+                request
+            </th>
+        </tr>
+        <tr>
+            <td>
+                Telugu
+            </td>
+            <td>
+                <input type="checkbox" onclick="funct(this)" value="telugu" name="tel">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                English
+            </td>
+            <td>
+                <input type="checkbox" onclick="funct(this)" value="English" name="Eng">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Hindi
+            </td>
+            <td>
+                <input type="checkbox" onclick="funct(this)" value="Hindi"  name="Hin">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Social
+            </td>
+            <td>
+                <input type="checkbox" onclick="funct(this)" value="Social" name="Soc">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Science
+            </td>
+            <td>
+                <input type="checkbox" onclick="funct(this)" value="Science" name="Sci">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                CP
+            </td>
+            <td>
+                <input type="checkbox" onclick="funct(this)" value="cp" name="cp">
+                
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="main two">
+    <div>
+        subjects added
+    </div>
+    <div id="subjects"></div>
+    
+</div>
+</div>
+<script>
+    function funct(obj)
+    {
+
+
+        var b=document.getElementById('subjects');
+        if(obj.checked==true)
+        {
+        var c=document.createElement('div');
+        c.innerHTML=obj.value;
+        c.id=obj.value;
+        b.appendChild(c);
+        }
+        else{
+            
+            var d=document.getElementById(obj.value);
+b.removeChild(d);
+        }
+       
+    }
+</script>
+</body>
+</html>

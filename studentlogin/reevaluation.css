@@ -1,0 +1,47 @@
+
+body{
+    font-family: helvetica;
+   
+}
+.heading{
+    text-align: center;
+}
+
+table{
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+   width:300px;
+   height:500px;
+  }
+  td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  
+  th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    
+    padding: 8px;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+ .total{
+     display: flex;
+     flex-wrap: wrap;
+   align-items: center;
+ }
+ .total .main{
+    margin-top:20px;
+    margin-bottom:20px;
+margin-left: auto;
+margin-right: auto;
+ }
+ .two{
+     width:300px;
+     height:300px;
+     background-color: #73c9e4;
+ }

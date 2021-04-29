@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="studentlogin.css?version=81"/>
+<link rel="stylesheet" href="studentlogin.css?version=1"/>
 <style>
 table{
     width:100%;
@@ -39,6 +39,12 @@ if(isset($_POST['submit']))
     
     header('location:result.php');
     
+}
+if(isset($_POST['submit22']))
+{
+  $_SESSION['rollno']=$rollnumber;
+  $_SESSION['classno']=$class;
+  header('location:reevaluation.html');
 }
 ?>
 <html>
