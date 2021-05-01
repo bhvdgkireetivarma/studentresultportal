@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 
   <title>reevaluation</title>
-  <link rel="stylesheet" href="reevaluation.css?version=81">
+  <link rel="stylesheet" href="reevaluation.css?version=1">
 
 </head>
 
@@ -20,10 +20,10 @@
     <table>
         <tr>
             <th>
-                Subject
+                SUBJECT
             </th>
             <th>
-                request
+                REQUEST
             </th>
         </tr>
         <tr>
@@ -31,7 +31,7 @@
                 Telugu
             </td>
             <td>
-                <input type="checkbox" onclick="funct(this)" value="telugu" name="tel">
+                <input type="checkbox" onclick="funct(this)" value="TELUGU" name="tel">
                 
             </td>
         </tr>
@@ -40,7 +40,7 @@
                 English
             </td>
             <td>
-                <input type="checkbox" onclick="funct(this)" value="English" name="Eng">
+                <input type="checkbox" onclick="funct(this)" value="ENGLISH" name="Eng">
                 
             </td>
         </tr>
@@ -49,7 +49,7 @@
                 Hindi
             </td>
             <td>
-                <input type="checkbox" onclick="funct(this)" value="Hindi"  name="Hin">
+                <input type="checkbox" onclick="funct(this)" value="HINDI"  name="Hin">
                 
             </td>
         </tr>
@@ -58,7 +58,7 @@
                 Social
             </td>
             <td>
-                <input type="checkbox" onclick="funct(this)" value="Social" name="Soc">
+                <input type="checkbox" onclick="funct(this)" value="SOCIAL" name="Soc">
                 
             </td>
         </tr>
@@ -67,7 +67,7 @@
                 Science
             </td>
             <td>
-                <input type="checkbox" onclick="funct(this)" value="Science" name="Sci">
+                <input type="checkbox" onclick="funct(this)" value="SCIENCE" name="Sci">
                 
             </td>
         </tr>
@@ -76,21 +76,24 @@
                 CP
             </td>
             <td>
-                <input type="checkbox" onclick="funct(this)" value="cp" name="cp">
+                <input type="checkbox" onclick="funct(this)" value="CP" name="cp">
                 
             </td>
         </tr>
     </table>
 </div>
 <div class="main two">
-    <div>
-        subjects added
+    <div class="subhead">
+        SUBJECTS ADDED
     </div>
-    <div id="subjects"></div>
+    <div id="subjects" class="subs">
+        <div id="deltemp">No Subject added</div>
+    </div>
     
 </div>
 </div>
 <script>
+   var t=0;
     function funct(obj)
     {
 
@@ -101,13 +104,29 @@
         var c=document.createElement('div');
         c.innerHTML=obj.value;
         c.id=obj.value;
+        c.className='subsss';
         b.appendChild(c);
+    t++;
         }
         else{
             
             var d=document.getElementById(obj.value);
 b.removeChild(d);
+t--;
+
         }
+        if(t!=0)
+        {
+            b.removeChild(document.getElementById('deltemp'));
+        }
+        if(t==0)
+{
+    var e=document.createElement('div');
+    e.innerHTML='No Subject Added';
+    e.id='deltemp';
+    b.appendChild(e);
+}
+
        
     }
 </script>
