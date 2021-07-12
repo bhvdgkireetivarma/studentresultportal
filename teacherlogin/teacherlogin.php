@@ -6,6 +6,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 session_start();
+if(!isset($_SESSION['teacherid'])){
+  header('location:http://localhost/studentresultportal/studentlogin/logout.php');
+}
 $teacherid=$_SESSION['teacherid'];
 $sql="SELECT * FROM teacher_details WHERE
 id='$teacherid'";
@@ -32,6 +35,9 @@ $error2="";
 $error3="";
 $error5="";
 $error4="";
+if(isset($_POST['logoutsubmit'])){
+  header('location:http://localhost/studentresultportal/studentlogin/logout.php');
+}
 if(isset($_POST['submit1']))
 {
     $roll1=$_POST['studentroll1'];
@@ -558,8 +564,10 @@ Get Failed Student list
 
 
 <div class="footer">
-  
-    <img  class="cali" src="calicut_logo.png" height="100px" >
+
+<button class ="cali btn btn-info btn-lg" type="submit" name="logoutsubmit">Log out</button>
+
+
     <div class="logos">
     <ul>
         <li><a href="https://www.facebook.com/" target="_blank"><img src="facebook.png" height="25px" ></a></li>
