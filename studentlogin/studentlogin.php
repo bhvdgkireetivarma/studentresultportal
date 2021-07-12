@@ -13,6 +13,10 @@ td{
 </style>
 <?php
 session_start();
+if(!isset($_SESSION['studentroll'])){
+  header('location:logout.php');
+
+}
 $conn=new mysqli("localhost","root","","studentresult");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
