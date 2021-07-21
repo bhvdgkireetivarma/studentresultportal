@@ -24,8 +24,8 @@ if(isset($_POST["student_submit"]))
         if($conn)
       {
           $sql="SELECT count(*) as cntUser
-          FROM student_login
-          WHERE RollNumber='$studentroll' AND studentPassword= '$studentpass' ";
+          FROM student_details
+          WHERE roll='$studentroll' AND studentPassword= '$studentpass' ";
 
 
 $result = $conn->query($sql);
@@ -58,8 +58,8 @@ if(isset($_POST["teacher_submit"]))
         if($conn)
       {
           $sql="SELECT count(*) as cntUser
-          FROM teacher_login
-          WHERE TeacherId='$teacherid' AND TeacherPassword= '$teacherpass' ";
+          FROM teacher_details
+          WHERE id='$teacherid' AND Teacherpassword= '$teacherpass' ";
 
 
 $result = $conn->query($sql);
