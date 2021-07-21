@@ -47,8 +47,7 @@ if(isset($_POST['submit']))
 if(isset($_POST['submit22']))
 {
   $_SESSION['rollno']=$rollnumber;
-  $_SESSION['classno']=$class;
-  header('location:reevaluation.html');
+  header('location:reevaluation.php');
 }
 ?>
 <html>

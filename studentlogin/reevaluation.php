@@ -1,15 +1,72 @@
+
+<?php 
+
+session_start();
+$finalmsg="";
+$roll=$_SESSION['rollno'];
+$conn=new mysqli("localhost","root","","studentresult");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$telugu=0;
+$english=0;
+$hindi=0;
+$social=0;
+$science=0;
+$cp=0;
+
+if(isset($_POST['submitrevaluation'])){
+if(isset($_POST['tel'])){
+    $telugu=1;
+}
+if(isset($_POST['Eng'])){
+    $english=1;
+}
+if(isset($_POST['Hin'])){
+    $hindi=1;
+}
+if(isset($_POST['Soc'])){
+    $social=1;
+}
+if(isset($_POST['Sci'])){
+    $science=1;
+}
+if(isset($_POST['cp'])){
+    $cp=1;
+}
+
+
+$sql="UPDATE studentevaluatuion SET Telugu='$telugu' , English= '$english',Hindi ='$hindi', Social= '$social',Science ='$science',Cp='$cp' 
+WHERE roll='$roll' ";
+$result=$conn->query($sql);
+if($result){
+    $finalmsg="success";
+
+}
+else{
+    $finalmsg="failed";
+}
+
+
+}
+?>
+
 <!doctype html>
 
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <title>reevaluation</title>
   <link rel="stylesheet" href="reevaluation.css?version=1">
 
 </head>
 
 <body>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <div class="heading">
     <h2>
         Request Re-evaluation
@@ -81,6 +138,14 @@
             </td>
         </tr>
     </table>
+  
+</div>
+<div>
+<button class="btn btn-info btn-lg" type="submit" name="submitrevaluation">submit</button>
+
+</div>
+<div>
+ <span><?php echo "$finalmsg";?></span>
 </div>
 <div class="main two">
     <div class="subhead">
@@ -92,6 +157,7 @@
     
 </div>
 </div>
+</form>
 <script>
    var t=0;
     function funct(obj)

@@ -62,6 +62,10 @@ $error1="*";
     }
   
 }
+if(isset($_POST['revaluatestudent'])){
+  session_start();
+  header('location:showrevaluate.php');
+}
 if(isset($_POST['submit2']))
 {
     $roll2=$_POST['studentroll2'];
@@ -422,55 +426,9 @@ if(isset($_POST['submit22']))
     </div>
   </div>
   <div class="model1 fifth">
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal6">Add Student</button>
-  
-    <!-- Modal -->
-    <div class="modal fade" id="myModal6" role="dialog">
-      <div class="modal-dialog">
-      
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Add Student</h4>
-          </div>
-          <div class="modal-body">
-            
-            
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
+    <button type="submit" class="btn btn-info btn-lg" name="revaluatestudent">Revaluation</button>
   </div>
-  <div class="model1 fifth">
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal7">Add Student</button>
-  
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-      <div class="modal-dialog">
-      
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Add Student</h4>
-          </div>
-          <div class="modal-body">
-           
-                
-                </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div>
-        
-      </div>
-    </div>
+
   </div>
   
 
@@ -533,31 +491,6 @@ Get Checked Student list
 </div>
 
 
-
-<div class="list two">
-<div class="listheading">
-Get Failed Student list
-</div>
-
-<div class="selectlist">
-<select name="classlist3">
-<option  value="1">1st Class</option>
-<option  value="2">2nd Class</option>
-<option  value="3">3rd Class</option>
-<option  value="4">4th Class</option>
-<option  value="5">5th Class</option>
-<option  value="6">6th Class</option>
-<option  value="7">7th Class</option>
-<option  value="8">8th Class</option>
-<option  value="9">9th Class</option>
-<option  value="10">10th Class</option>
-</select>
-</div>
-<div class="listbutton">
-  <button type="submit" name="submit33" >Get List</button>
-</div>
-
-</div>
 
 </div>
 

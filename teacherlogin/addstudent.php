@@ -1,6 +1,9 @@
 <link rel="stylesheet" href="addstudent.css?version=81"/>
 <?php 
 session_start();
+if(!isset($_SESSION['teacherid'])){
+  header('location:http://localhost/studentresultportal/studentlogin/logout.php');
+}
 $conn=new mysqli("localhost","root","","studentresult");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -30,9 +33,16 @@ if($name!=""&&$gender!=""&&$rollnum!=""&&$bday!=""&&$phone!=""&&$email!=""&&$pas
     $result=$conn->query($sql);
     $sql3="INSERT INTO studentgrades VALUES('$rollnum','$name','$telugu','$english','$hindi','$social','$science','$cp','$class')";
     $result2=$conn->query($sql3);
-  $sql4="INSERT INTO studentcheck VALUES('$rollnum','$name','$class','0')";
+  $sql4="INSERT INTO studentcheck VALUES('$rollnum','$name','$class',0)";
   $result3=$conn->query($sql4);
-    if($result&&$result2&&$result3)
+
+  $sql5="INSERT INTO studentevaluatuion VALUES('$rollnum',0,0,0,0,0,0)";
+
+  $result4=$conn->query($sql5);
+
+  $sql6="INSERT INTO teacherstudent VALUES('$teacherid','$rollnum')";
+  $result5=$conn->query($sql6);
+    if($result&&$result2&&$result3&&$result4&&$result5)
     {
   $finalmsg="successful!";
     }
