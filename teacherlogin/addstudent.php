@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="addstudent.css?version=81"/>
 <?php 
-
+session_start();
 $conn=new mysqli("localhost","root","","studentresult");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -8,8 +8,9 @@ if ($conn->connect_error) {
 $finalmsg="";
 if(isset($_POST["register"]))
 {
-    $name=$_POST["name"];
-    $class=$_POST["class"];
+$teacherid=$_SESSION['teacherid'];
+$name=$_POST["name"];
+$class=$_POST["class"];
 $gender=$_POST["gender"];
 $rollnum=$_POST["rollnumber"];
 $bday=$_POST["bday"];
@@ -22,22 +23,21 @@ $hindi=$_POST["hindi"];
 $social=$_POST["social"];
 $science=$_POST["science"];
 $cp=$_POST["cp"];
+
 if($name!=""&&$gender!=""&&$rollnum!=""&&$bday!=""&&$phone!=""&&$email!=""&&$pass!=""&&$telugu!=""&&$english!=""&&$hindi!=""&&$social!=""&&$science!=""&&$cp!="")
 {
-    $sql="INSERT INTO student_details VALUES('$rollnum','$name','$bday','$gender','$email','$class','$phone')";
+    $sql="INSERT INTO student_details VALUES('$rollnum','$name','$bday','$gender','$email','$class','$phone','$teacherid','$pass')";
     $result=$conn->query($sql);
-    $sql2="INSERT into student_login VALUES('$rollnum','$pass')";
-    $result1=$conn->query($sql2);
     $sql3="INSERT INTO studentgrades VALUES('$rollnum','$name','$telugu','$english','$hindi','$social','$science','$cp','$class')";
     $result2=$conn->query($sql3);
   $sql4="INSERT INTO studentcheck VALUES('$rollnum','$name','$class','0')";
   $result3=$conn->query($sql4);
-    if($result&&$result1&&$result2)
+    if($result&&$result2&&$result3)
     {
   $finalmsg="successful!";
     }
     else{
-        $finalmsg="unsuccess!";
+        $finalmsg="unsuccess!".$result."sfs".$result2."sdss".$result3."fs";
     }
 }
 
